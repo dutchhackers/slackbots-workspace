@@ -1,7 +1,7 @@
-import { botsRabassa } from './bots-rabassa';
+import { run } from './bots-rabassa';
 
 describe('botsRabassa', () => {
   it('should work', () => {
-    expect(botsRabassa()).toEqual('bots-rabassa');
+    expect(run()).toEqual('bots-rabassa');
   });
 });

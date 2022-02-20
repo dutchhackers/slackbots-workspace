@@ -5,6 +5,7 @@
   "scripts": {},
   "private": true,
   "dependencies": {
+    "@slack/bolt": "^3.9.0",
     "tslib": "^2.0.0"
   },
   "devDependencies": {

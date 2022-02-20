@@ -1,3 +1,5 @@
-import { botsRabassa } from './app/bots-rabassa';
+import { join } from 'path';
+import * as dotenv from 'dotenv';
+dotenv.config({ path: join(process.cwd(), 'packages/bots/rabassa/.env') });
 
-console.log(`Running ${botsRabassa()}`);
+import './app/bots-rabassa';
