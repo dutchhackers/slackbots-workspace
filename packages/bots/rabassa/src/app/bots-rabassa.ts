@@ -15,7 +15,7 @@ async function bootstrap() {
   // Start your app
   await app.start();
 
-  console.log('⚡️ Bolt app is running!');
+  console.log('⚡️ Rebassa is running!');
 }
 
 bootstrap();
