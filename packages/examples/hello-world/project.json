@@ -1,0 +1,39 @@
+{
+  "root": "packages/examples/hello-world",
+  "sourceRoot": "packages/examples/hello-world/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/examples/hello-world",
+        "main": "packages/examples/hello-world/src/index.ts",
+        "tsConfig": "packages/examples/hello-world/tsconfig.app.json",
+        "assets": ["packages/examples/hello-world/*.md"]
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "examples-hello-world:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/examples/hello-world/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/examples/hello-world"],
+      "options": {
+        "jestConfig": "packages/examples/hello-world/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
