@@ -1,6 +1,6 @@
 {
   "version": 2,
   "projects": {
-    "examples-hello-world": "packages/examples/hello-world"
+    "core": "packages/libs/core"
   }
 }

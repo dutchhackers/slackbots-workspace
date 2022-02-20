@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@slackbots/core": ["packages/libs/core/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
