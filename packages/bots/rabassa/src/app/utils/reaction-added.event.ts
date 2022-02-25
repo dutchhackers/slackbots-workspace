@@ -1,5 +1,5 @@
 import { WebClient } from '@slack/web-api';
-import { emoji, reverseText } from '../../utils';
+import { emoji, reverseText } from '.';
 
 export const onReactionAdded = async ({ event, client, logger }) => {
   try {
