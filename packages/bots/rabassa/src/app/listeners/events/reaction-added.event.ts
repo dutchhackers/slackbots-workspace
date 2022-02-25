@@ -1,19 +1,31 @@
 import { WebClient } from '@slack/web-api';
-import { emoji, getMessage, reverseText } from '../../utils';
+import { emoji, getMessageByTimestamp, parseLang, translate } from '../../utils';
 
 export const onReactionAdded = async ({ event, client, logger }) => {
   try {
-    const inputMessage = await getMessage( client, 
-      event.item.channel,
-      event.item.ts,
-    );
+    const message = (await getMessageByTimestamp(client, event)).text;
+    const reaction = event.reaction;
+    const lang = parseLang(reaction);
 
-    const result = await client.chat.postMessage({
+    if (!(message && lang)) {
+      await client.reactions.add({
+        name: 'shrug',
+        channel: event.item.channel,
+        timestamp: event.item.ts,
+      });
+      return;
+    }
+
+    const translated = await translate(message, lang);
+
+    await (client as WebClient).chat.postEphemeral({
       channel: event.item.channel,
-      text: `${reverseText(inputMessage)} ${emoji(event.reaction)}`,
-      thread_ts: event.item.ts,
+      text: `${translated} ${emoji(event.reaction)}`,
+      // thread_ts: event.item.ts,
+
+      // Send message to user only (hidden)
+      user: event.user,
     });
-    logger.info(result);
   } catch (error) {
     logger.error(error);
   }
