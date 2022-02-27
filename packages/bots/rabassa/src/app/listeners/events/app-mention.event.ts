@@ -1,14 +1,6 @@
-export const onAppMentionEvent = async ({
-  event,
-  body,
-  say,
-  client,
-  logger,
-}) => {
+export const onAppMentionEvent = async ({ event, client, logger }) => {
   try {
-    // console.log(body);
-
-    const result = await client.reactions.add({
+    await client.reactions.add({
       name: '+1',
       channel: event.channel,
       timestamp: event.ts,

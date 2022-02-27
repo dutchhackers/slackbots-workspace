@@ -1,5 +1,8 @@
 {
-  "name": "@slackbots/bots/rabassa",
+  "name": "@slackbots/rabassa",
   "version": "0.0.1",
-  "type": "commonjs"
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^10.0.0"
+  }
 }
