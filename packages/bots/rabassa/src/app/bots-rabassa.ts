@@ -1,6 +1,5 @@
 import { App } from '@slack/bolt';
 import { register } from './listeners';
-import { getLangFromReaction, translate } from './utils';
 
 async function bootstrap() {
   const app = new App({
