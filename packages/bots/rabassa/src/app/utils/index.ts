@@ -1,2 +1,3 @@
-export * from './reverse-text.util';
-export * from './slack-emoji.util';
+export * from './gcp-utils';
+export * from './slack-utils';
+export * from './string-utils';
