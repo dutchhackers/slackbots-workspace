@@ -1,11 +1,11 @@
 import { WebClient } from '@slack/web-api';
-import { emoji, getMessageByTimestamp, parseLang, translate } from '../../utils';
+import { emoji, getMessageByTimestamp, translate, getLangFromReaction } from '../../utils';
 
 export const onReactionAdded = async ({ event, client, logger }) => {
   try {
     const message = (await getMessageByTimestamp(client, event)).text;
     const reaction = event.reaction;
-    const lang = parseLang(reaction);
+    const lang = getLangFromReaction(reaction);
 
     if (!(message && lang)) {
       await client.reactions.add({
