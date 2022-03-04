@@ -10,7 +10,7 @@ export const onReactionAdded = async ({ event, client, logger }) => {
     const lang = getLangFromReaction(reaction);
 
     if (!(message && isSupportedLang(lang))) {
-      return;
+      return fallbackReply(client, event, reaction);
     }
 
     const translated = await translate(message, lang);
@@ -34,4 +34,27 @@ function isSupportedLang(langCode: string) {
   }
 
   return SUPPORTED_LANG_CODES.includes(langCode);
+}
+
+async function fallbackReply(client: WebClient, event, reaction) {
+  let fallbackMessage;
+
+  switch (true) {
+    case reaction === 'pirate_flag':
+      fallbackMessage = "arrrr, and a bottle 'o rum!";
+      break;
+  }
+
+  if (!fallbackMessage) {
+    return;
+  }
+
+  await client.chat.postEphemeral({
+    channel: event.item.channel,
+    text: fallbackMessage,
+    // thread_ts: event.item.ts,
+
+    // Send message to user only (hidden)
+    user: event.user,
+  });
 }
