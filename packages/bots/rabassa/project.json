@@ -51,6 +51,21 @@
         ]
       },
       "parallel": false
+    },
+    "deploy:cf": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "cp ../../../../packages/bots/rabassa/server/manifest.yml ."
+          },
+          {
+            "command": "cf push"
+          }
+        ],
+        "cwd": "dist/packages/bots/rabassa"
+      },
+      "parallel": false
     }
   },
   "tags": ["type:app"]
