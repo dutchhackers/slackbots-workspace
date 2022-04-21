@@ -1,5 +1,18 @@
 {
-  "name": "@slackbots/bots/rabassa",
+  "name": "@slackbots/rabassa",
   "version": "0.0.1",
-  "type": "commonjs"
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "@google-cloud/translate": "^6.3.1",
+    "@slack/bolt": "^3.9.0",
+    "tslib": "^2.0.0"
+  },
+  "engines": {
+    "node": "16.x",
+    "npm": "8.x"
+  }
 }

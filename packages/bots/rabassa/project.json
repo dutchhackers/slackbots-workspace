@@ -10,7 +10,8 @@
         "outputPath": "dist/packages/bots/rabassa",
         "main": "packages/bots/rabassa/src/index.ts",
         "tsConfig": "packages/bots/rabassa/tsconfig.app.json",
-        "assets": ["packages/bots/rabassa/*.md"]
+        "assets": ["packages/bots/rabassa/*.md"],
+        "generatePackageJson": true
       }
     },
     "serve": {
@@ -33,6 +34,23 @@
         "jestConfig": "packages/bots/rabassa/jest.config.js",
         "passWithNoTests": true
       }
+    },
+    "dockerize": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "docker build -f ./packages/bots/rabassa/server/Dockerfile . -t rabassa-bot"
+      },
+      "parallel": false
+    },
+    "docker-push": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "if [ {args.projectId} = \"undefined\" ]; then echo \"provide project arg\"; else docker tag rabassa-bot gcr.io/{args.projectId}/rabassa-bot; fi ",
+          "if [ {args.projectId} = \"undefined\" ]; then echo \"provide project arg\"; else docker push gcr.io/{args.projectId}/rabassa-bot; fi "
+        ]
+      },
+      "parallel": false
     }
   },
   "tags": ["type:app"]
