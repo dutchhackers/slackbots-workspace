@@ -1,9 +1,0 @@
-applications:
-  - name: rok-bot-test
-    path: .
-    instances: 1
-    memory: 64M
-    stack: cflinuxfs3
-    buildpacks:
-      - nodejs_buildpack
-    command: node src/index.js
