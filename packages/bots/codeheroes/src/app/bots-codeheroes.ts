@@ -1,6 +1,7 @@
-import { PlayerService, TeamService } from './services';
-
+import 'reflect-metadata';
 import { container } from 'tsyringe';
+
+import { PlayerService, TeamService } from './services';
 
 const playerService = container.resolve(PlayerService);
 const teamService = container.resolve(TeamService);

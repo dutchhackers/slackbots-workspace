@@ -1,4 +1,12 @@
+import { autoInjectable, singleton } from 'tsyringe';
+import { LoggerService } from './services/logger.service';
+
+@singleton()
+@autoInjectable()
 export default class Db {
+  constructor(logger: LoggerService) {
+    logger.log('Db initialized');
+  }
   get players() {
     return players;
   }
