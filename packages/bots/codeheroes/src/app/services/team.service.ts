@@ -1,9 +1,15 @@
+import { autoInjectable } from 'tsyringe';
 import Db from '../db';
 
-const db = new Db();
-
+@autoInjectable()
 export class TeamService {
+  db: Db;
+
+  constructor(db: Db) {
+    this.db = db;
+  }
+
   getAll() {
-    return db.teams;
+    return this.db.teams;
   }
 }

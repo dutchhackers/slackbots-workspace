@@ -1,7 +1,9 @@
 import { PlayerService, TeamService } from './services';
 
-const playerService = new PlayerService();
-const teamService = new TeamService();
+import { container } from 'tsyringe';
+
+const playerService = container.resolve(PlayerService);
+const teamService = container.resolve(TeamService);
 
 async function main() {
   console.log(`Running Bot`);
