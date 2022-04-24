@@ -16,7 +16,7 @@
     "serve": {
       "executor": "@nrwl/js:node",
       "options": {
-        "buildTarget": "bots-codeheroes:build"
+        "buildTarget": "codeheroes-bot:build"
       }
     },
     "lint": {
