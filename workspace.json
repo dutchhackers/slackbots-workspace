@@ -1,7 +1,8 @@
 {
   "version": 2,
   "projects": {
-    "rabassa-bot": "packages/bots/rabassa",
-    "core": "packages/libs/core"
+    "codeheroes-bot": "packages/bots/codeheroes",
+    "core": "packages/libs/core",
+    "rabassa-bot": "packages/bots/rabassa"
   }
 }
