@@ -1,8 +1,11 @@
-import { singleton } from 'tsyringe';
+import { autoInjectable, singleton } from 'tsyringe';
 
-@singleton()
+// @singleton()
+@autoInjectable()
 export class LoggerService {
-  // constructor() {}
+  constructor() {
+    console.log('logger service constructor');
+  }
 
   log(message: string) {
     console.log(`${new Date().toISOString()} ${message}`);
