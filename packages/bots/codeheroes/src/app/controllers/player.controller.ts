@@ -1,31 +1,21 @@
 import { autoInjectable } from 'tsyringe';
-import Db from '../db';
-import { LoggerService, PlayerService, TeamService } from '../services';
+import { LoggerService, PlayerService } from '../services';
+import { BaseController } from './base.controller';
 
 @autoInjectable()
-export class EventController {
-  db: Db;
+export class PlayerController extends BaseController {
+  constructor(private playerService?: PlayerService, private logger?: LoggerService) {
+    super();
 
-  constructor(db: Db, private playerService: PlayerService, private teamService: TeamService, private loggerService: LoggerService) {
-    this.db = db;
-    // this.loggerService = loggerService;
-    // console.log('Initialize logger service', loggerService);q
-    // console.log(this.db.players);
+    this.onInit();
   }
   async test() {
     const playersData = this.playerService.getAll();
     console.log(`Number of players: ${playersData.length}`);
     console.log(`Players: ${playersData.map(player => player.name).join(', ')}`);
-
-    const teamsData = await this.teamService.getAll();
-    console.log(`Number of teams: ${teamsData.length}`);
-    console.log(`Teams: ${teamsData.map(team => team.name).join(', ')}`);
   }
 
   async onAppMentionEvent({ event, client, say, logger }) {
-    console.log(this.db.players);
-
-    // this.loggerService.log('onAppMentionEvent');
     try {
       await client.reactions.add({
         name: '+1',
@@ -43,5 +33,11 @@ export class EventController {
     } catch (error) {
       logger.error(error);
     }
+  }
+
+  private onInit() {
+    this.logger.debug('onInit');
+
+    this.app.event('app_mention', this.onAppMentionEvent);
   }
 }

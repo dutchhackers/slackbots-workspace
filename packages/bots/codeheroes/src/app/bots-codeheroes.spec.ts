@@ -1,7 +1,7 @@
-import { botsCodeheroes } from './bots-codeheroes';
+import './bots-codeheroes';
 
 describe('botsCodeheroes', () => {
   it('should work', () => {
-    expect(botsCodeheroes()).toEqual('bots-codeheroes');
+    expect('bots-codeheroes').toEqual('bots-codeheroes');
   });
 });
