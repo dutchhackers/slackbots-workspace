@@ -1,7 +1,6 @@
-import { autoInjectable, singleton } from 'tsyringe';
+import { singleton } from 'tsyringe';
 
-// @singleton()
-@autoInjectable()
+@singleton()
 export class LoggerService {
   constructor() {
     console.log('logger service constructor');
