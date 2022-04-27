@@ -1,11 +1,7 @@
 import { App } from '@slack/bolt';
 import 'reflect-metadata';
 import { container } from 'tsyringe';
-import { PlayerController } from './controllers/player.controller';
-
-function registerControllers() {
-  new PlayerController();
-}
+import { controllers } from './controllers';
 
 function initializeApp() {
   const appOptions = {
@@ -28,6 +24,12 @@ function initializeApp() {
   app.start();
 
   console.log('⚡️ Codeheroes is running!');
+}
+
+function registerControllers() {
+  controllers.forEach(controllerClass => {
+    const controllerInstance = new controllerClass();
+  });
 }
 
 initializeApp();

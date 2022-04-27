@@ -8,7 +8,12 @@ export abstract class BaseController {
     this.#app = container.resolve<App>('app');
   }
 
-  protected get app() {
-    return this.#app;
+  // protected get app() {
+  //   return this.#app;
+  // }
+
+  protected registerEvent(eventName: string, handler: (...args: any[]) => Promise<void>) {
+    console.log(`Registering event: ${eventName}`);
+    this.#app.event(eventName, handler);
   }
 }

@@ -38,6 +38,6 @@ export class PlayerController extends BaseController {
   private onInit() {
     this.logger.debug('onInit');
 
-    this.app.event('app_mention', this.onAppMentionEvent);
+    this.registerEvent('app_mention', this.onAppMentionEvent);
   }
 }
