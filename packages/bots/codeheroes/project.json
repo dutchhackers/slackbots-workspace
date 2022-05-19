@@ -1,0 +1,39 @@
+{
+  "root": "packages/bots/codeheroes",
+  "sourceRoot": "packages/bots/codeheroes/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/bots/codeheroes",
+        "main": "packages/bots/codeheroes/src/index.ts",
+        "tsConfig": "packages/bots/codeheroes/tsconfig.app.json",
+        "assets": ["packages/bots/codeheroes/*.md"]
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "codeheroes-bot:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/bots/codeheroes/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/bots/codeheroes"],
+      "options": {
+        "jestConfig": "packages/bots/codeheroes/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
