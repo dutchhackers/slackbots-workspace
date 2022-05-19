@@ -1,5 +1,4 @@
 {
-  "root": "packages/bots/codeheroes",
   "sourceRoot": "packages/bots/codeheroes/src",
   "projectType": "application",
   "targets": {
@@ -14,7 +13,7 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/js:node",
+      "executor": "@nrwl/node:node",
       "options": {
         "buildTarget": "codeheroes-bot:build"
       }
@@ -30,7 +29,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/packages/bots/codeheroes"],
       "options": {
-        "jestConfig": "packages/bots/codeheroes/jest.config.js",
+        "jestConfig": "packages/bots/codeheroes/jest.config.ts",
         "passWithNoTests": true
       }
     }

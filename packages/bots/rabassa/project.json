@@ -1,5 +1,4 @@
 {
-  "root": "packages/bots/rabassa",
   "sourceRoot": "packages/bots/rabassa/src",
   "projectType": "application",
   "targets": {
@@ -15,7 +14,7 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/js:node",
+      "executor": "@nrwl/node:node",
       "options": {
         "buildTarget": "rabassa-bot:build"
       }
@@ -31,7 +30,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/packages/bots/rabassa"],
       "options": {
-        "jestConfig": "packages/bots/rabassa/jest.config.js",
+        "jestConfig": "packages/bots/rabassa/jest.config.ts",
         "passWithNoTests": true
       }
     },
