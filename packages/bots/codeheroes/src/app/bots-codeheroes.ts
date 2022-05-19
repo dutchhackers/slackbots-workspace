@@ -28,7 +28,7 @@ function initializeApp() {
 
 function registerControllers() {
   controllers.forEach(controllerClass => {
-    const controllerInstance = new controllerClass();
+    new controllerClass();
   });
 }
 
