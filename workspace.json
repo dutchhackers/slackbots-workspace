@@ -4,5 +4,6 @@
     "codeheroes-bot": "packages/bots/codeheroes",
     "core": "packages/libs/core",
     "rabassa-bot": "packages/bots/rabassa"
-  }
+  },
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }
