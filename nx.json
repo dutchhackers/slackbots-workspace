@@ -22,5 +22,16 @@
         "projects": "self"
       }
     ]
+  },
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "targetDefaults": {
+    "dockerize": {
+      "dependsOn": ["build"]
+    }
+  },
+  "pluginsConfig": {
+    "@nrwl/js": {
+      "analyzeSourceFiles": true
+    }
   }
 }
