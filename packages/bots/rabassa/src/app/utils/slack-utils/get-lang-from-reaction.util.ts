@@ -8,9 +8,11 @@ const LANGUAGE_CODES = [
   { code: 'ru', name: 'Russian', reactions: ['ru'] },
   { code: 'cn', name: 'Chinese', reactions: ['zh-cn'] },
   { code: 'pt', name: 'Portuguese', reactions: ['pt'] },
+  { code: 'pl', name: 'Polish', reactions: ['pl'] },
 ];
 
 export const getLangFromReaction = (reaction: string, defaultLang: string = null) => {
+  console.log({ reaction });
   const reactionLang = parseReactionLang(reaction);
   if (!reactionLang) {
     return defaultLang;

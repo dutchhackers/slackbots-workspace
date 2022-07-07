@@ -1,7 +1,7 @@
 import { WebClient } from '@slack/web-api';
 import { emoji, getMessageByTimestamp, translate, getLangFromReaction } from '../../utils';
 
-const SUPPORTED_LANG_CODES = ['nl', 'be', 'fr', 'de', 'en', 'it', 'es', 'ru', 'cn', 'pt'];
+const SUPPORTED_LANG_CODES = ['nl', 'be', 'fr', 'de', 'en', 'it', 'es', 'ru', 'cn', 'pt', 'pl'];
 
 export const onReactionAdded = async ({ event, client, logger }) => {
   try {
