@@ -1,5 +1,5 @@
 import { join } from 'path';
 import * as dotenv from 'dotenv';
-dotenv.config({ path: join(process.cwd(), 'packages/bots/rabassa/.env') });
+// dotenv.config({ path: '../.env2' });
 
 import './app/bots-rabassa';
