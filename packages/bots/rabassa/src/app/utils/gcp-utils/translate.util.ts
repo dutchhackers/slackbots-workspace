@@ -5,7 +5,7 @@ const projectId = process.env['PROJECT_ID'];
 // Instantiates a client
 const translateClient = new lib.v2.Translate({ projectId });
 
-export const translate = async (text, target) => {
+export const translate = async (text: string, target: string) => {
   if (!(text && target)) {
     return null;
   }

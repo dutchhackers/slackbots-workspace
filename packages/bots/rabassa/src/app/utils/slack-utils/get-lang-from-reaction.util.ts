@@ -2,12 +2,13 @@ const LANGUAGE_CODES = [
   { code: 'nl', name: 'Dutch', reactions: ['nl', 'be'] },
   { code: 'fr', name: 'French', reactions: ['fr'] },
   { code: 'de', name: 'German', reactions: ['de'] },
-  { code: 'en', name: 'English', reactions: ['us', 'gb', 'uk'] },
+  { code: 'en', name: 'English', reactions: ['us', 'gb', 'uk', 'england'] },
   { code: 'it', name: 'Italian', reactions: ['it'] },
   { code: 'es', name: 'Spanish', reactions: ['es'] },
   { code: 'ru', name: 'Russian', reactions: ['ru'] },
   { code: 'cn', name: 'Chinese', reactions: ['zh-cn'] },
   { code: 'pt', name: 'Portuguese', reactions: ['pt'] },
+  { code: 'pl', name: 'Polish', reactions: ['pl'] },
 ];
 
 export const getLangFromReaction = (reaction: string, defaultLang: string = null) => {
