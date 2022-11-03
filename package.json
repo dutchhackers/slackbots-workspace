@@ -12,7 +12,7 @@
   "dependencies": {
     "@google-cloud/translate": "^7.0.2",
     "@slack/bolt": "^3.12.2",
-    "dotenv": "^16.0.2",
+    "dotenv": "^16.0.3",
     "reflect-metadata": "^0.1.13",
     "tslib": "^2.4.1",
     "tsyringe": "^4.7.0"
