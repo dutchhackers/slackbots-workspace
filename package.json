@@ -10,11 +10,11 @@
   },
   "private": true,
   "dependencies": {
-    "@google-cloud/translate": "^7.0.0",
-    "@slack/bolt": "^3.11.3",
-    "dotenv": "^16.0.1",
+    "@google-cloud/translate": "^7.1.1",
+    "@slack/bolt": "^3.12.2",
+    "dotenv": "^16.0.3",
     "reflect-metadata": "^0.1.13",
-    "tslib": "^2.4.0",
+    "tslib": "^2.5.0",
     "tsyringe": "^4.7.0"
   },
   "devDependencies": {
@@ -26,16 +26,16 @@
     "@nrwl/node": "14.4.2",
     "@nrwl/workspace": "14.4.2",
     "@types/jest": "27.4.1",
-    "@types/node": "18.0.3",
-    "@typescript-eslint/eslint-plugin": "5.30.5",
-    "@typescript-eslint/parser": "5.30.5",
-    "eslint": "8.19.0",
+    "@types/node": "18.11.9",
+    "@typescript-eslint/eslint-plugin": "5.38.0",
+    "@typescript-eslint/parser": "5.32.0",
+    "eslint": "8.34.0",
     "eslint-config-prettier": "8.5.0",
     "jest": "27.5.1",
-    "prettier": "2.7.1",
+    "prettier": "2.8.4",
     "ts-jest": "27.1.4",
-    "typescript": "4.7.4",
-    "nx": "14.4.2"
+    "typescript": "4.9.5",
+    "nx": "14.5.4"
   }
 }
 
