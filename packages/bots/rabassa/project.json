@@ -1,4 +1,5 @@
 {
+  "name": "rabassa-bot",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/bots/rabassa/src",
   "projectType": "application",
@@ -29,21 +30,21 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/bots/rabassa"],
+      "outputs": ["{workspaceRoot}/coverage/packages/bots/rabassa"],
       "options": {
         "jestConfig": "packages/bots/rabassa/jest.config.ts",
         "passWithNoTests": true
       }
     },
     "dockerize": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "command": "docker build -f ./packages/bots/rabassa/server/Dockerfile . -t rabassa-bot"
       },
       "parallel": false
     },
     "docker-push": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "commands": [
           "if [ {args.projectId} = \"undefined\" ]; then echo \"provide project arg\"; else docker tag rabassa-bot gcr.io/{args.projectId}/rabassa-bot; fi ",

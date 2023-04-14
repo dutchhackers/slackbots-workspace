@@ -1,4 +1,5 @@
 {
+  "name": "codeheroes-bot",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/bots/codeheroes/src",
   "projectType": "application",
@@ -28,7 +29,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/bots/codeheroes"],
+      "outputs": ["{workspaceRoot}/coverage/packages/bots/codeheroes"],
       "options": {
         "jestConfig": "packages/bots/codeheroes/jest.config.ts",
         "passWithNoTests": true
