@@ -14,7 +14,7 @@
     "@slack/bolt": "^3.13.0",
     "dotenv": "^16.0.3",
     "reflect-metadata": "^0.1.13",
-    "tslib": "^2.5.0",
+    "tslib": "^2.5.2",
     "tsyringe": "^4.7.0"
   },
   "devDependencies": {
