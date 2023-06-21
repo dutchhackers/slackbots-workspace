@@ -15,7 +15,7 @@
     "dotenv": "^16.0.3",
     "reflect-metadata": "^0.1.13",
     "tslib": "^2.5.0",
-    "tsyringe": "^4.7.0"
+    "tsyringe": "^4.8.0"
   },
   "devDependencies": {
     "@nrwl/cli": "15.9.2",
